@@ -9,7 +9,7 @@ services:
       - ${NGINX_PORT}:80
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
-      - ./src/dist:/var/www/html/public
+      - ./src:/var/www/html
   server:
     build:
       context: .
