@@ -9,4 +9,6 @@ RUN npm install --no-cache
 RUN npm install -g yarn --force
 RUN yarn build
 
-#CMD ["node", "server/index.js"]
+EXPOSE 4000
+
+CMD ["node", "server"]
