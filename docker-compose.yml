@@ -22,4 +22,4 @@ services:
     expose:
       - "4000"
     volumes:
-      - ./src:/var/www/html
+      - ./server-vol:/var/www/html
