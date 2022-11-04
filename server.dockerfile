@@ -4,5 +4,7 @@ WORKDIR /var/www/html
 ENV PATH /var/www/html/node_modules/.bin:$PATH
 
 RUN npm install --no-cache
+RUN npm install yarn
+RUN yarn build
 
 CMD ["node", "server/index.js"]
