@@ -20,4 +20,3 @@ services:
       - "4000"
     volumes:
       - ./src:/var/www/html
-      - ./src/node_modules:/var/www/html/node_modules
