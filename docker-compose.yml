@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  front:
+    image: nginx:stable-alpine
+    container_name: ${CONTAINER_GROUP}-front
+    restart: "on-failure"
+    ports:
+      - "${NGINX_PORT}:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./src/dist:/var/www/html/public
+  server:
+    build:
+      context: .
+    container_name: ${CONTAINER_GROUP}-server
+    restart: "on-failure"
+    expose:
+      - "${NODE_PORT}:4000"
+    volumes:
+      - ./src/server:/var/www/html
+      - ./src/node_modules:/var/www/html/node_modules
