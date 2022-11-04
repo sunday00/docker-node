@@ -6,7 +6,7 @@ ENV PATH /var/www/html/node_modules/.bin:$PATH
 COPY src/package.json /var/www/html/package.json
 
 RUN npm install --no-cache
-RUN npm install -g yarn
+RUN npm install -g yarn --force
 
 COPY src /var/www/html
 
