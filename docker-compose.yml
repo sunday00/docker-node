@@ -13,10 +13,11 @@ services:
   server:
     build:
       context: .
+      dockerfile: server.dockerfile
     container_name: ${CONTAINER_GROUP}-server
     restart: "on-failure"
     expose:
-      - "${NODE_PORT}:4000"
+      - "4000"
     volumes:
       - ./src/server:/var/www/html
       - ./src/node_modules:/var/www/html/node_modules
